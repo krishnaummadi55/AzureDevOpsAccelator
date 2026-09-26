@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Azure DevOps & Terraform | 45-Day Career Accelerator</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            azure: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0078d4',
+              600: '#0063b1',
+              700: '#004e8c'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html.transition-theme * {
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Alert Announcement -->
+  <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white text-xs md:text-sm font-semibold py-2.5 px-4 text-center tracking-wide shadow-sm">
+    <span class="inline-block animate-pulse mr-2">🚀</span> <strong>Freshers & Career Starter Cohort:</strong> Live Weekend & Evening Batches.
+    <a href="https://wa.me/919669779663?text=Hi,%20I'm%20interested%20in%20the%2045-Day%20Azure%20DevOps%20Course." target="_blank" class="underline ml-2 hover:text-blue-100 font-bold">Inquire on WhatsApp &rarr;</a>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo with Official Azure SVG -->
+      <a href="#overview" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700 flex items-center justify-center p-2 shadow-sm group-hover:scale-105 transition">
+          <svg viewBox="0 0 96 96" class="w-7 h-7 fill-current" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0078D4" d="M36.19 14.28a3.19 3.19 0 0 0-2.82 1.7L4.67 70.36a3.19 3.19 0 0 0 2.82 4.64h22.6a3.19 3.19 0 0 0 2.82-1.7l13.1-24.8-9.82-34.22z"/>
+            <path fill="#5EA0EF" d="M43.08 43.11l15.11 28.59a3.19 3.19 0 0 0 2.82 1.7h27.32a3.19 3.19 0 0 0 2.82-4.65L62.7 15.98a3.19 3.19 0 0 0-2.82-1.7H38.99l4.09 28.83z"/>
+          </svg>
+        </div>
+        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white">
+          Azure<span class="text-blue-600 dark:text-blue-400">DevOps</span> Accelerator
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#overview" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Overview</a>
+        <a href="#curriculum" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Curriculum</a>
+        <a href="#project-details" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Project Details</a>
+        <a href="#faq" class="hover:text-blue-600 dark:hover:text-blue-400 transition">FAQs</a>
+      </nav>
+
+      <!-- Action Buttons + Theme Toggle -->
+      <div class="flex items-center space-x-3">
+        <!-- Dark / Light Mode Switcher Button -->
+        <button id="theme-toggle" aria-label="Toggle Theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
+        </button>
+
+        <a href="https://wa.me/919669779663?text=Hi,%20I'm%20interested%20in%20the%2045-Day%20Azure%20DevOps%20Program." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2.5 rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center">
+          <i class="fa-brands fa-whatsapp mr-1.5 text-base"></i> +91 9669779663
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden" id="overview">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-50/70 via-transparent to-transparent dark:from-blue-950/20 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/10 dark:text-blue-400 dark:border dark:border-blue-500/30 mb-6">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span> Ideal for Freshers, Students & IT Beginners
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+          Launch Your Career in <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">Azure Cloud & DevOps</span>
+        </h1>
+        
+        <p class="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+          Designed specifically for university students, career starters, and aspiring engineers. Go step-by-step from foundational Linux commands to building production-grade CI/CD pipelines, Docker containers, and Terraform on Microsoft Azure.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/919669779663?text=Hi,%20I'm%20a%20student/fresher%20looking%20to%20learn%20Azure%20DevOps." target="_blank" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-base shadow-xl shadow-blue-500/25 transition transform hover:-translate-y-0.5 flex items-center justify-center">
+            <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Apply for Next Batch
+          </a>
+          <a href="#curriculum" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-bold text-base transition shadow-sm">
+            View 45-Day Syllabus
+          </a>
+        </div>
+
+        <!-- Balanced Metrics Strip -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none max-w-4xl mx-auto">
+          <div class="flex flex-col items-center justify-center text-center">
+            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 leading-none whitespace-nowrap">45 Days</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-2 uppercase font-bold tracking-wider">Step-by-step Learning</div>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center border-y sm:border-y-0 sm:border-x border-slate-200 dark:border-slate-700/50 py-4 sm:py-0 px-2">
+            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 leading-none whitespace-nowrap">1:1 Mentorship</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-2 uppercase font-bold tracking-wider">Interview & Resume Support</div>
+          </div>
+          <div class="flex flex-col items-center justify-center text-center">
+            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 leading-none whitespace-nowrap">100% Labs</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-2 uppercase font-bold tracking-wider">Terminal & Azure Portal</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Platform Ribbon -->
+  <section class="py-8 border-y border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-950/40">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-xs font-bold text-slate-500 dark:text-slate-400 tracking-wider uppercase mb-5">High-Demand Industry Skills Taught</p>
+      <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-slate-700 dark:text-slate-300 text-sm sm:text-base font-bold">
+        <span class="flex items-center space-x-2"><i class="fa-brands fa-linux text-xl text-yellow-600"></i> <span>Linux / Bash</span></span>
+        <span class="flex items-center space-x-2"><i class="fa-brands fa-microsoft text-xl text-blue-600"></i> <span>Microsoft Azure</span></span>
+        <span class="flex items-center space-x-2"><i class="fa-solid fa-cube text-xl text-purple-600"></i> <span>Terraform</span></span>
+        <span class="flex items-center space-x-2"><i class="fa-brands fa-docker text-xl text-sky-500"></i> <span>Docker</span></span>
+        <span class="flex items-center space-x-2"><i class="fa-solid fa-dharmachakra text-xl text-blue-500"></i> <span>Kubernetes (AKS)</span></span>
+        <span class="flex items-center space-x-2"><i class="fa-solid fa-code-branch text-xl text-indigo-600"></i> <span>Azure Pipelines</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Curriculum Section -->
+  <section id="curriculum" class="py-16 md:py-20 bg-slate-50 dark:bg-slate-900 transition-colors">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/40 px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800">Complete Roadmap</span>
+        <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">45-Day Structured Learning</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">Click any phase card below to see the exact day-by-day topics and hands-on exercises.</p>
+      </div>
+
+      <div class="space-y-4">
+
+        <!-- Phase 1 -->
+        <div onclick="openModal('modal-phase-1')" class="bg-white dark:bg-slate-800/70 hover:border-blue-500 dark:hover:border-blue-500 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 cursor-pointer transition transform hover:-translate-y-0.5 group shadow-sm hover:shadow-md">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">Phase 1 • Days 01–08</span>
+            <div class="flex items-center space-x-3">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fa-solid fa-clock mr-1"></i> Week 1</span>
+              <span class="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center">
+                Day-wise details <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+              </span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Linux Administration & Shell Scripting Automation</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">File hierarchy, user privilege models (sudo, permissions), processes, systemd services, network inspection, and Bash automation.</p>
+        </div>
+
+        <!-- Phase 2 -->
+        <div onclick="openModal('modal-phase-2')" class="bg-white dark:bg-slate-800/70 hover:border-blue-500 dark:hover:border-blue-500 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 cursor-pointer transition transform hover:-translate-y-0.5 group shadow-sm hover:shadow-md">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">Phase 2 • Days 09–16</span>
+            <div class="flex items-center space-x-3">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fa-solid fa-clock mr-1"></i> Week 2</span>
+              <span class="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center">
+                Day-wise details <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+              </span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Azure Cloud Architecture & Core Services</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Virtual Networks (VNets), subnets, NSGs, Azure Virtual Machines, Microsoft Entra ID (IAM), Azure Key Vault, and Storage accounts.</p>
+        </div>
+
+        <!-- Phase 3 -->
+        <div onclick="openModal('modal-phase-3')" class="bg-white dark:bg-slate-800/70 hover:border-blue-500 dark:hover:border-blue-500 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 cursor-pointer transition transform hover:-translate-y-0.5 group shadow-sm hover:shadow-md">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">Phase 3 • Days 17–24</span>
+            <div class="flex items-center space-x-3">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fa-solid fa-clock mr-1"></i> Week 3</span>
+              <span class="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center">
+                Day-wise details <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+              </span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Infrastructure as Code (IaC) with HashiCorp Terraform</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Writing declarative HCL scripts, Azure provider setup, managing remote state files with locking, modular code, and variables.</p>
+        </div>
+
+        <!-- Phase 4 -->
+        <div onclick="openModal('modal-phase-4')" class="bg-white dark:bg-slate-800/70 hover:border-blue-500 dark:hover:border-blue-500 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 cursor-pointer transition transform hover:-translate-y-0.5 group shadow-sm hover:shadow-md">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">Phase 4 • Days 25–32</span>
+            <div class="flex items-center space-x-3">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fa-solid fa-clock mr-1"></i> Week 4</span>
+              <span class="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center">
+                Day-wise details <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+              </span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Containers & Azure Kubernetes Service (AKS)</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Writing clean Dockerfiles, publishing images to Azure Container Registry (ACR), Kubernetes Pods/Deployments, and AKS cluster management.</p>
+        </div>
+
+        <!-- Phase 5 -->
+        <div onclick="openModal('modal-phase-5')" class="bg-white dark:bg-slate-800/70 hover:border-blue-500 dark:hover:border-blue-500 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-6 cursor-pointer transition transform hover:-translate-y-0.5 group shadow-sm hover:shadow-md">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">Phase 5 • Days 33–40</span>
+            <div class="flex items-center space-x-3">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fa-solid fa-clock mr-1"></i> Week 5</span>
+              <span class="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center">
+                Day-wise details <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+              </span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Enterprise CI/CD with Azure DevOps Pipelines</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Multi-stage YAML pipelines, automated triggers on Git PRs, environment approvals, Docker packaging, and automated Terraform execution.</p>
+        </div>
+
+        <!-- Phase 6 -->
+        <div onclick="openModal('modal-phase-6')" class="bg-white dark:bg-slate-800/70 hover:border-indigo-500 border border-indigo-200 dark:border-indigo-500/40 rounded-2xl p-6 cursor-pointer transition transform hover:-translate-y-0.5 group shadow-sm hover:shadow-md">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-bold rounded-lg bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300">Phase 6 • Days 41–45</span>
+            <div class="flex items-center space-x-3">
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400"><i class="fa-solid fa-clock mr-1"></i> Week 6</span>
+              <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 group-hover:underline flex items-center">
+                Day-wise details <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+              </span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">DevSecOps, Observability & Final Production Project</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Trivy vulnerability scans, Log Analytics workspaces, Azure Monitor alerts, student resume polish, and mock technical interviews.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details Section -->
+  <section id="project-details" class="py-16 md:py-20 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/40 px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800">Real-World Experience</span>
+        <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">Capstone Project</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto">Build an end-to-end production architecture you can proudly showcase to interviewers and recruiters.</p>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-slate-50 dark:bg-slate-900 border border-blue-300 dark:border-blue-500/40 rounded-3xl p-6 sm:p-10 shadow-lg">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="px-3 py-1 text-xs font-extrabold tracking-wider uppercase rounded-full bg-blue-600 text-white">
+            Project 1
+          </span>
+          <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center">
+            <i class="fa-solid fa-circle-check mr-1.5"></i> Production Deployment
+          </span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-snug">
+          End-to-End Application Deployment: Infrastructure as Code & Application Hosting
+        </h3>
+        
+        <p class="text-slate-600 dark:text-slate-300 mt-4 leading-relaxed text-sm sm:text-base">
+          You will build the entire cloud environment using Terraform scripts and configure automated Azure DevOps pipelines to test, build, and deploy containerized services directly to Azure Kubernetes Service.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
+            <div class="text-blue-600 dark:text-blue-400 text-base font-bold flex items-center mb-3">
+              <i class="fa-solid fa-server mr-2.5"></i> Infrastructure Provisioning
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 text-xs"></i> Provision isolated Azure VNets, subnets, and secure NSGs.</li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 text-xs"></i> Modularized Terraform scripts with remote state locking in Azure Blob.</li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 text-xs"></i> Secure secret storage using Azure Key Vault and Managed Identities.</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
+            <div class="text-blue-600 dark:text-blue-400 text-base font-bold flex items-center mb-3">
+              <i class="fa-solid fa-cloud-arrow-up mr-2.5"></i> Application Hosting & Delivery
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 text-xs"></i> Multi-stage Docker image builds published to Azure Container Registry.</li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 text-xs"></i> Workload orchestration on Azure Kubernetes Service (AKS) with Ingress routing.</li>
+              <li class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 text-xs"></i> Multi-stage Azure YAML CI/CD pipeline with approval gates.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-2">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Technologies Used:</span>
+          <span class="px-2.5 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-mono">Terraform</span>
+          <span class="px-2.5 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-mono">Azure VNet</span>
+          <span class="px-2.5 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-mono">Docker</span>
+          <span class="px-2.5 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-mono">AKS</span>
+          <span class="px-2.5 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-mono">Azure Pipelines</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-1">Got Questions?</h2>
+        <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Frequently Asked Questions</p>
+      </div>
+      <div class="space-y-4">
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
+          <h4 class="font-bold text-slate-900 dark:text-white text-base">Is this course suitable for complete beginners or students?</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Yes! We begin from fundamental Linux commands and computer networking before progressing to cloud services and automation scripting. You do not need prior software engineering experience.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
+          <h4 class="font-bold text-slate-900 dark:text-white text-base">Will I have to pay heavy Azure cloud bills?</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">No. We guide you step-by-step through setting up Microsoft Azure's Free Tier with initial free credits, along with automatic cleanup scripts to prevent accidental charges.</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
+          <h4 class="font-bold text-slate-900 dark:text-white text-base">What if I miss a live class?</h4>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Every single session is recorded in HD and provided alongside GitHub repos, command cheat sheets, and practical lab guides.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact Section -->
+  <section id="enroll" class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-slate-100 dark:from-slate-900 dark:to-slate-950 border-t border-slate-200 dark:border-slate-800 text-center transition-colors">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Start Your DevOps Journey Today</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+        Connect directly on WhatsApp to receive the complete syllabus PDF, inquire about batch timings, or reserve your seat.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/919669779663?text=Hi,%20I'm%20interested%20in%20enrolling%20in%20the%2045-Day%20Azure%20DevOps%20Course." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl shadow-emerald-600/25 transition flex items-center justify-center">
+          <i class="fa-brands fa-whatsapp text-2xl mr-2.5"></i> Chat on WhatsApp (+91 9669779663)
+        </a>
+        <a href="tel:+919669779663" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-bold text-base transition shadow-sm flex items-center justify-center">
+          <i class="fa-solid fa-phone mr-2 text-blue-600"></i> Call Directly
+        </a>
+      </div>
+      <p class="text-xs text-slate-500 mt-5"><i class="fa-solid fa-user-shield mr-1"></i> Friendly, direct guidance from the instructor.</p>
+    </div>
+  </section>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 p-3 md:hidden flex items-center justify-between shadow-lg">
+    <div class="text-left pl-2">
+      <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Batch Starting Soon</div>
+      <div class="text-sm font-extrabold text-slate-900 dark:text-white">Azure DevOps (45 Days)</div>
+    </div>
+    <a href="https://wa.me/919669779663?text=Hi,%20I'm%20interested%20in%20the%2045-Day%20Azure%20DevOps%20Course." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-md flex items-center">
+      <i class="fa-brands fa-whatsapp mr-1.5 text-base"></i> WhatsApp Now
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-8 pb-20 md:pb-8 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-500 transition-colors">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>© 2026 Azure DevOps Accelerator. All rights reserved.</p>
+      <p class="mt-1">Direct Inquiries: +91 9669779663</p>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- MODALS (DAY-WISE DETAILS)                                -->
+  <!-- ======================================================== -->
+
+  <!-- Modal Phase 1 -->
+  <div id="modal-phase-1" class="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 w-full max-w-2xl rounded-3xl shadow-2xl max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur z-10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-300">Phase 1 • Days 01–08</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Linux Administration & Shell Scripting</h3>
+        </div>
+        <button onclick="closeModal('modal-phase-1')" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 01: Linux Foundations & Navigation</strong>
+          Architecture, File System Hierarchy (FHS), core commands (`ls`, `cd`, `grep`, `find`, `tar`), and piping.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 02: User Management & Permissions</strong>
+          User/group administration, POSIX permissions (`chmod`, `chown`), Umask, and Sudoers security.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 03: Process Management, Storage & Systemd</strong>
+          Process inspection (`ps`, `top`), signal handling, disk storage, swap, and writing systemd service units.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 04: Networking, SSH & Security</strong>
+          TCP/IP fundamentals, network troubleshooting (`netstat`, `ss`, `ip`, `curl`), SSH keys, and basic firewalls.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 05: Package Management & Software Installation</strong>
+          APT, YUM/DNF, compiling packages, environment variables, shared libraries, and daemon configuration.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 06: Bash Scripting Fundamentals</strong>
+          Shell scripts, positional parameters, control loops (`if-else`, `while`), and input validation.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 07: Advanced Scripting & Text Processing</strong>
+          Stream manipulation with `sed` and `awk`, regular expressions, bash functions, and log parsers.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 08: Linux Mini-Project & Review</strong>
+          Build an automated server health monitor script that auto-compresses logs and dispatches alerts.
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-right">
+        <button onclick="closeModal('modal-phase-1')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl text-sm font-semibold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Phase 2 -->
+  <div id="modal-phase-2" class="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 w-full max-w-2xl rounded-3xl shadow-2xl max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur z-10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-300">Phase 2 • Days 09–16</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Azure Cloud Architecture & Core Services</h3>
+        </div>
+        <button onclick="closeModal('modal-phase-2')" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 09: Azure Foundations & Governance</strong>
+          Regions, availability zones, subscriptions, resource groups, and Azure Policy.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 10: Azure Identity & Access Management (Entra ID)</strong>
+          Azure AD / Entra ID, Users, Groups, Role-Based Access Control (RBAC), and Managed Identities.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 11: Azure Virtual Networking (VNet)</strong>
+          Address spaces, Subnets, Network Security Groups (NSGs), ASGs, and VNet peering.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 12: Azure Compute (IaaS)</strong>
+          Azure Virtual Machines, VM sizing, disks, VM Scale Sets (VMSS), and auto-scaling.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 13: Azure Storage Architecture</strong>
+          Blob storage (Hot/Cool/Archive), Azure Files, SAS tokens, and storage firewalls.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 14: PaaS Compute & Serverless</strong>
+          Azure App Services (Web Apps), deployment slots, and Azure Functions (serverless).
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 15: Azure Networking & Security Services</strong>
+          Azure Load Balancer, Azure Application Gateway (WAF), and Azure Key Vault.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 16: Phase 2 Hands-On Lab</strong>
+          Deploy a secure, multi-tier web application architecture featuring load balancing and Key Vault.
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-right">
+        <button onclick="closeModal('modal-phase-2')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl text-sm font-semibold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Phase 3 -->
+  <div id="modal-phase-3" class="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 w-full max-w-2xl rounded-3xl shadow-2xl max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur z-10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-300">Phase 3 • Days 17–24</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Infrastructure as Code (IaC) with Terraform</h3>
+        </div>
+        <button onclick="closeModal('modal-phase-3')" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 17: IaC Concepts & Terraform Basics</strong>
+          Declarative IaC, CLI workflow (`init`, `plan`, `apply`, `destroy`), and `azurerm` provider.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 18: Terraform HCL Syntax & Resources</strong>
+          Blocks, arguments, input variables, output values, locals, and data sources.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 19: State Management & Remote State</strong>
+          Managing `terraform.tfstate`, remote locking with Azure Blob Storage Lease, and state commands.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 20: Expressions, Functions & Loops</strong>
+          Built-in functions, conditionals, `count`, `for_each`, and dynamic blocks.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 21: Modular Terraform Development</strong>
+          Reusable module creation, child vs root modules, and module versioning.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 22: Advanced Terraform Operations</strong>
+          Workspaces for Dev/Prod environments, importing existing infrastructure, and drift management.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 23: Terraform Linting & Security</strong>
+          Static code analysis with `tflint`, security scanning with `tfsec`, and formatting checks.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 24: Phase 3 Capstone Lab</strong>
+          Develop an entire Azure landing zone using custom reusable modules and remote backend state.
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-right">
+        <button onclick="closeModal('modal-phase-3')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl text-sm font-semibold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Phase 4 -->
+  <div id="modal-phase-4" class="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 w-full max-w-2xl rounded-3xl shadow-2xl max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur z-10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-300">Phase 4 • Days 25–32</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Containers & Azure Kubernetes (AKS)</h3>
+        </div>
+        <button onclick="closeModal('modal-phase-4')" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 25: Docker Fundamentals</strong>
+          Container engine, images vs containers, and running lightweight workloads locally.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 26: Containerizing Applications</strong>
+          Writing multi-stage `Dockerfiles`, caching layers, minimizing image footprint, and best practices.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 27: Docker Networking & Storage</strong>
+          Bridge networks, volumes vs bind mounts, and multi-service Docker Compose setups.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 28: Azure Container Registry (ACR)</strong>
+          Setting up ACR, authenticating with service principals, pushing images, and vulnerability scanning.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 29: Kubernetes Fundamentals</strong>
+          K8s architecture, `kubectl` CLI commands, Pods, ReplicaSets, and Deployments.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 30: K8s Networking & Services</strong>
+          ClusterIP, NodePort, LoadBalancer services, Ingress controllers, and ConfigMaps/Secrets.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 31: Azure Kubernetes Service (AKS) Setup</strong>
+          Provisioning AKS clusters via Terraform, node pools, networking types, and RBAC integration.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 32: Phase 4 Lab</strong>
+          Deploy a microservice app onto AKS with Ingress routing and secure ACR image pulling.
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-right">
+        <button onclick="closeModal('modal-phase-4')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl text-sm font-semibold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Phase 5 -->
+  <div id="modal-phase-5" class="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 w-full max-w-2xl rounded-3xl shadow-2xl max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur z-10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-500/20 dark:text-blue-300">Phase 5 • Days 33–40</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Enterprise CI/CD Pipelines</h3>
+        </div>
+        <button onclick="closeModal('modal-phase-5')" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 33: Version Control & Git Strategy</strong>
+          Branching strategies (Trunk vs GitFlow), Pull Requests, code reviews, and commit hygiene.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 34: Azure DevOps & Azure Repos</strong>
+          Organization & project setup, Azure Repos, PAT tokens, and cloud service connections.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 35: Azure Pipelines (YAML Syntax)</strong>
+          Pipeline triggers, agents, stages, jobs, and tasks in modern YAML pipelines.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 36: Building CI Pipelines</strong>
+          Continuous Integration: automated testing, Docker build tasks, and ACR publishing.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 37: CD & Deployment Strategies</strong>
+          Release environments, approval gates, blue-green deployments, and canary releases.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 38: Automating Terraform via Azure Pipelines</strong>
+          IaC automation: linting, planning on PRs, and gate approval before applying changes.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 39: Secrets Management in Pipelines</strong>
+          Variable groups, Azure Key Vault integration in Pipelines, and secret masking.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-blue-600 dark:text-blue-400 font-semibold block mb-0.5">Day 40: Phase 5 Lab</strong>
+          Build an end-to-end automated Azure YAML pipeline triggering on Git push.
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-right">
+        <button onclick="closeModal('modal-phase-5')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl text-sm font-semibold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Phase 6 -->
+  <div id="modal-phase-6" class="fixed inset-0 z-50 bg-slate-900/60 dark:bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 w-full max-w-2xl rounded-3xl shadow-2xl max-h-[88vh] flex flex-col overflow-hidden">
+      <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur z-10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-500/20 dark:text-indigo-300">Phase 6 • Days 41–45</span>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">DevSecOps, Monitoring & Interview Readiness</h3>
+        </div>
+        <button onclick="closeModal('modal-phase-6')" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto space-y-3.5 text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-0.5">Day 41: DevSecOps & Security Automation</strong>
+          Vulnerability scanning with Trivy and automated secret detection in pipelines.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-0.5">Day 42: Azure Monitor & Log Analytics</strong>
+          Log Analytics workspaces, Kusto Query Language (KQL) basics, and diagnostic rules.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-0.5">Day 43: Application Performance Monitoring (APM)</strong>
+          Application Insights, distributed traces, metric alerts, and cloud dashboards.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-0.5">Day 44: Final Capstone Implementation</strong>
+          End-to-end execution: Terraform provisioning, CI/CD pipeline, security scans, and monitoring.
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800">
+          <strong class="text-indigo-600 dark:text-indigo-400 font-semibold block mb-0.5">Day 45: Capstone Review & Technical Mock Interviews</strong>
+          Architecture defense, resume polishing, and technical interview preparation for junior/entry-level DevOps roles.
+        </div>
+      </div>
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 text-right">
+        <button onclick="closeModal('modal-phase-6')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-white rounded-xl text-sm font-semibold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript: Theme Switcher & Modal Handlers -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeIcon.classList.replace('fa-sun', 'fa-moon');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.add('transition-theme');
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+      }
+      setTimeout(() => document.documentElement.classList.remove('transition-theme'), 300);
+    });
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    window.addEventListener('click', function(e) {
+      if (e.target.classList.contains('fixed') && e.target.classList.contains('z-50')) {
+        e.target.classList.add('hidden');
+        e.target.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.fixed.z-50').forEach(modal => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        });
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
